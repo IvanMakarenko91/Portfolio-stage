@@ -9,10 +9,11 @@ function init() {
 
     main.style.display = 'block';
     setTimeout(() => (main.style.opacity = 1), 50);
-  }, 3000);
+  }, 100);
 }
 
 init();
+
 
 // Size bar loading
 const counterEl = document.querySelector(".counter");
@@ -31,6 +32,7 @@ function updateNum() {
     setTimeout(updateNum, 20);
   }
 }
+
 
 // Boutton play
 const btn = document.querySelector(".btn");
@@ -51,6 +53,7 @@ btn.addEventListener("click", () => {
   }
 });
 
+
 // Menu boutton toggle
 var menu = document.querySelector(".menu");
 var toggle_menu = document.querySelector(".toggle-menu");
@@ -59,6 +62,7 @@ toggle_menu.addEventListener('click', () => {
   toggle_menu.classList.toggle('activer') ;
   menu.classList.toggle('responsive') ;
 })
+
 
 // Menu class active
 const li = document.querySelectorAll('.links');
@@ -72,3 +76,33 @@ function activeMenu() {
 }
 activeMenu();
 window.addEventListener('scroll', activeMenu)
+
+
+// ScrollBar Animation
+const ecole = document.querySelector('#competences');
+const myProgressBar1 = document.querySelector(".progress1");
+const myProgressBar2 = document.querySelector(".progress2");
+const myProgressBar3 = document.querySelector(".progress3");
+const myProgressBar4 = document.querySelector(".progress4");
+const myProgressBar5 = document.querySelector(".progress5");
+
+function updateProgressBar(progressBar, value) {
+  value = Math.round(value);
+  progressBar.querySelector(".progress__fill").style.width = `${value}%`;
+  progressBar.querySelector(".progress__text").textContent = `${value}%`;
+}
+
+window.addEventListener('scroll', () => {
+
+    const {scrollTop, clientHeight} = document.documentElement;
+
+    const topElementToTopViewport = ecole.getBoundingClientRect().top;
+
+    if(scrollTop > (scrollTop + topElementToTopViewport).toFixed() - clientHeight * 0.6){
+        updateProgressBar(myProgressBar1, 92)
+        updateProgressBar(myProgressBar2, 98)
+        updateProgressBar(myProgressBar3, 80)
+        updateProgressBar(myProgressBar4, 83)
+        updateProgressBar(myProgressBar5, 83)
+    }
+})

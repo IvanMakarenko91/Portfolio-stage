@@ -122,6 +122,7 @@ header h2 {
   justify-content: space-around;
   align-items: center;
   position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.200);
 }
 
 header ul {
@@ -161,7 +162,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   width: 100%;
   padding-top: 50px;
 }
@@ -254,4 +255,356 @@ section {
     top: 50px;
     opacity: 1;
   }
+}
+
+
+/* Présentation */
+
+#presentation {
+  position: relative;
+  background-color: whitesmoke;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  min-height: 50vh;
+}
+
+.titre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: 2rem;
+  width: 100%;
+}
+
+.fond {
+  position: absolute;
+  font-size: 6rem;
+  opacity: 0.05;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titre::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 50px;
+  background-color: black;
+  bottom: -30px;
+}
+
+.moi {
+  font-size: 1.3rem;
+  text-align: center;
+  line-height: 1.8;
+}
+
+
+@media screen and (max-width:991px) {
+  .fond {
+    font-size: 3.7rem;
+  }
+  .titre {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width:450px) {
+  .fond {
+    font-size: 2.5rem;
+  }
+  .titre {
+    font-size: 1.3rem;
+  }
+}
+
+
+/* Réalisation */
+
+#realisation {
+  position: relative;
+  background-color: rgb(253, 253, 253);
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1400px;
+}
+
+.moi-real {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.image {
+  position: relative;
+  width: 300px;
+  margin: 0px 20px;
+}
+
+.image-jointe {
+  width: 100%;
+  height: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.real-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.real-overlay > * {
+  transform: translateY(100px);
+  transition: transform 0.25s;
+}
+
+.real-overlay:hover {
+  opacity: 1;
+}
+
+.real-overlay:hover > * {
+  transform: translateY(0);
+}
+
+.real-titre {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.real-description {
+  font-size: 1.25rem;
+  margin-top: 0.25rem;
+}
+
+.travaux i {
+  font-size: 1.1rem;
+}
+
+.travaux button {
+  background-color: rgb(207, 198, 198);
+  color: black;
+}
+.travaux button:hover {
+  background-color: rgb(255, 255, 255);
+  color: green;
+}
+
+@media (max-width:499px) {
+  .image {
+    width: 100%;
+    margin: 0px;
+  }
+
+  .image-jointe {
+    height: 250px;
+  }
+}
+
+@media (max-width:359px) {
+  .image-jointe {
+    height: 150px;
+  }
+}
+
+
+/* Qualité */
+
+#qualite {
+  position: relative;
+  background-color: whitesmoke;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pour-moi {
+  max-width: 1400px;
+}
+
+.pour-vous {
+  width: 400px;
+  height: 200px;
+  background-color: white;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0.5px 0.5px 8px rgba(0, 0, 0, 0.200);
+  transition: all 0.2s ease-in-out;
+  margin: 20px 20px;
+}
+
+.pour-vous i {
+  font-size: 2.5rem;
+}
+
+.pour-vous p {
+  text-align: center;
+  color: white;
+}
+
+.pour-vous:hover {
+  background-color: black;
+  color: white;
+}
+
+.pour-vous:hover p {
+  color: white;
+}
+
+@media (max-width:499px) {
+  .pour-vous {
+    width: 100%;
+  }
+}
+
+
+/* Compétences */
+
+#competences {
+  position: relative;
+  background-color: rgb(253, 253, 253);
+  padding: 0px;
+  display: flex;
+}
+
+.cent {
+  width: 100%;
+}
+
+.photo2 {
+  min-height: 50vh;
+  background: url('./images/fond.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.padding {
+  padding: 50px;
+}
+
+.progress1, .progress2, .progress3, .progress4, .progress5 {
+  position: relative;
+  width: 80%;
+  max-width: 900px;
+  height: 30px;
+  background: #c2482a80;
+  overflow: hidden;
+}
+
+.progress__fill {
+  width: 0%;
+  height: 100%;
+  background: #8b1c00;
+  transition: ease-in-out 2s;
+}
+
+.progress__text {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  font: bold 14px "Quicksand", sans-serif;
+  color: #ffffff;
+}
+
+.aligner-centrer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media (max-width:768px) {
+  .progress1, .progress2, .progress3, .progress4, .progress5 {
+    width: 80%;
+  }
+}
+
+@media (max-width:359px) {
+  .progress1, .progress2, .progress3, .progress4, .progress5 {
+    width: 100%;
+  }
+}
+
+/* Footer */
+
+#contacts {
+  min-height: 20vh;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0px;
+}
+
+#telecharger {
+  color: black;
+  padding: 10px;
+  background-color: rgb(209, 205, 205);
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+#telecharger:hover {
+  text-decoration: none;
+  color: rgb(119, 117, 117);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.fa-download {
+  color: rgb(209, 159, 66);
+  font-size: 1.2rem;
+}
+
+.fa-github, .fa-linkedin {
+  font-size: 3rem;
+  color: black;
+}
+.fa-github:hover, .fa-linkedin:hover {
+  color: rgb(61, 60, 60);
+}
+
+.copyright {
+  background-color: #44484b;
+  min-height: 8vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.centrer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.centrer i {
+  font-size: 5rem;
+}
+
+.connaissance {
+  display: flex;
+  justify-content: center;
 }
