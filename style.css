@@ -275,6 +275,14 @@ section {
   flex-direction: column;
 }
 
+.presentation-image {
+  background-image: url("./images/climat.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 300px;
+}
+
 .titre {
   display: flex;
   justify-content: center;
@@ -329,12 +337,18 @@ section {
   }
 }
 
-@media screen and (max-width:776px) {
+@media screen and (max-width:768px) {
   .fond2 {
     font-size: 2.5rem;
   }
   #presentation {
-    padding: 100px 50px 100px 50px;
+    padding: 100px 50px;
+  }
+}
+
+@media screen and (max-width:499px) {
+  #presentation {
+    padding: 70px 30px;
   }
 }
 
@@ -369,14 +383,14 @@ section {
 
 .image {
   position: relative;
-  width: 300px;
+  width: 400px;
   margin: 0px 20px;
 }
 
 .image-jointe {
   width: 100%;
   height: 300px;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 5px black;
 }
 
 .real-overlay {
@@ -429,6 +443,12 @@ section {
 .travaux button:hover {
   background-color: rgb(255, 255, 255);
   color: green;
+}
+
+@media (max-width:768px) {
+  #realisation {
+    padding: 70px 30px;
+  }
 }
 
 @media (max-width:499px) {
@@ -497,15 +517,18 @@ section {
   color: white;
 }
 
-@media (max-width:776px) {
+@media (max-width:768px) {
   #qualite {
-    padding: 100px 50px 100px 50px;
+    padding: 100px 50px;
   }
 }
 
 @media (max-width:499px) {
   .pour-vous {
     width: 100%;
+  }
+  #qualite {
+    padding: 70px 30px;
   }
 }
 
@@ -685,8 +708,14 @@ section {
   color: #5ed3f3;
 }
 
-@media (max-width:776px) {
+@media (max-width:768px) {
   .padding {
-    padding: 100px 50px 100px 50px;
+    padding: 100px 50px;
+  }
+}
+
+@media (max-width:499px) {
+  .padding {
+    padding: 70px 30px;
   }
 }
