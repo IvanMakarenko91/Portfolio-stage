@@ -99,10 +99,10 @@ window.addEventListener('scroll', () => {
     const topElementToTopViewport = ecole.getBoundingClientRect().top;
 
     if(scrollTop > (scrollTop + topElementToTopViewport).toFixed() - clientHeight * 0.6){
-        updateProgressBar(myProgressBar1, 92)
-        updateProgressBar(myProgressBar2, 98)
-        updateProgressBar(myProgressBar3, 80)
-        updateProgressBar(myProgressBar4, 83)
-        updateProgressBar(myProgressBar5, 83)
+        updateProgressBar(myProgressBar1, 90)
+        updateProgressBar(myProgressBar2, 90)
+        updateProgressBar(myProgressBar3, 60)
+        updateProgressBar(myProgressBar4, 80)
+        updateProgressBar(myProgressBar5, 40)
     }
 })
