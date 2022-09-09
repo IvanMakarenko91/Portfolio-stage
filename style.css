@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|ZCOOL+KuaiLe&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-/* font-family: 'Roboto', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+/* font-family: 'EB Garamond', serif; */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
 * {
   box-sizing: border-box;
@@ -9,7 +10,12 @@
 }
 
 body {
+  scroll-behavior: smooth;
   font-family: 'Lato', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6,.fond,.fond2,.titre {
+  font-family: 'EB Garamond', serif;
 }
 
 #loading {
@@ -280,8 +286,18 @@ section {
 
 .fond {
   position: absolute;
-  font-size: 6rem;
-  opacity: 0.05;
+  font-size: 5rem;
+  opacity: 0.1;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fond2 {
+  position: absolute;
+  font-size: 4rem;
+  opacity: 0.1;
   text-transform: uppercase;
   display: flex;
   justify-content: center;
@@ -308,8 +324,14 @@ section {
   .fond {
     font-size: 3.7rem;
   }
-  .titre {
-    font-size: 1.5rem;
+  .fond2 {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width:776px) {
+  .fond2 {
+    font-size: 2.5rem;
   }
 }
 
@@ -317,8 +339,11 @@ section {
   .fond {
     font-size: 2.5rem;
   }
-  .titre {
-    font-size: 1.3rem;
+  .fond2 {
+    font-size: 2rem;
+  }
+  .moi {
+    line-height: 1.5;
   }
 }
 
@@ -408,7 +433,9 @@ section {
     width: 100%;
     margin: 0px;
   }
-
+  .real-titre {
+    font-size: 1.3rem;
+  }
   .image-jointe {
     height: 250px;
   }

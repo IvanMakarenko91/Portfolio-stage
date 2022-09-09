@@ -106,3 +106,11 @@ window.addEventListener('scroll', () => {
         updateProgressBar(myProgressBar5, 40)
     }
 })
+
+
+// Couleur telachargement CV
+let telechargers = document.getElementById('telecharger');
+let downloads = document.getElementById('download');
+telechargers.addEventListener("click", () => {
+  downloads.style.color = "#52BB32";
+});
