@@ -70,7 +70,7 @@ const sec = document.querySelectorAll('section');
 
 function activeMenu() {
   let len = sec.length;
-  while(--len && window.scrollY + 72 < sec[len].offsetTop);
+  while(--len && window.scrollY + 150 < sec[len].offsetTop);
   li.forEach(ltx => ltx.classList.remove('activerr'));
   li[len].classList.add('activerr');
 }

@@ -270,10 +270,9 @@ section {
 #presentation {
   position: relative;
   background-color: whitesmoke;
-  padding: 50px;
+  padding: 150px 50px 150px 50px;
   display: flex;
   flex-direction: column;
-  min-height: 50vh;
 }
 
 .titre {
@@ -334,6 +333,9 @@ section {
   .fond2 {
     font-size: 2.5rem;
   }
+  #presentation {
+    padding: 100px 50px 100px 50px;
+  }
 }
 
 @media screen and (max-width:450px) {
@@ -354,7 +356,7 @@ section {
 #realisation {
   position: relative;
   background-color: rgb(253, 253, 253);
-  padding: 50px;
+  padding: 100px 50px 100px 50px;
   display: flex;
   flex-direction: column;
   max-width: 1400px;
@@ -454,7 +456,7 @@ section {
 #qualite {
   position: relative;
   background-color: whitesmoke;
-  padding: 50px;
+  padding: 150px 50px 150px 50px;
   display: flex;
   flex-direction: column;
 }
@@ -495,6 +497,12 @@ section {
   color: white;
 }
 
+@media (max-width:776px) {
+  #qualite {
+    padding: 100px 50px 100px 50px;
+  }
+}
+
 @media (max-width:499px) {
   .pour-vous {
     width: 100%;
@@ -524,7 +532,7 @@ section {
 }
 
 .padding {
-  padding: 50px;
+  padding: 100px 50px 150px 50px;
 }
 
 .progress1, .progress2, .progress3, .progress4, .progress5 {
@@ -599,7 +607,6 @@ section {
 /* Footer */
 
 #contacts {
-  min-height: 20vh;
   background-color: whitesmoke;
   display: flex;
   flex-direction: column;
@@ -676,4 +683,10 @@ section {
 }
 #contacts .fa-react {
   color: #5ed3f3;
+}
+
+@media (max-width:776px) {
+  .padding {
+    padding: 100px 50px 100px 50px;
+  }
 }
