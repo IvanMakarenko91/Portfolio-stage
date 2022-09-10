@@ -116,13 +116,30 @@ telechargers.addEventListener("click", () => {
 });
 
 
-// Scroll animation opacité page
+// Scroll animation opacité page + Rotation animation fleche de remonter
 const bgImageEl = document.getElementById("bg-image");
+const remonter = document.getElementById('remonter');
 
 window.addEventListener("scroll", () => {
   bgImageEl.style.opacity = 1 - window.pageYOffset / window.innerHeight;
+  if(scrollY > (window.innerHeight * 0.99)) {
+    remonter.style.transform = 'rotate(180deg)';
+  }
+  else {
+    remonter.style.transform = 'rotate(0deg)';
+  }
 });
 
+remonter.addEventListener('click', () => {
+  window.scrollTo({
+      top: window.innerHeight,
+      left: 0,
+      behavior: "smooth"
+  })
+})
+
+
+// Effet ripple au survol
 const btnEl = document.querySelector(".btns");
 
 btnEl.addEventListener("mouseover", (event) => {
@@ -131,4 +148,21 @@ btnEl.addEventListener("mouseover", (event) => {
 
   btnEl.style.setProperty("--xPos", x + "px");
   btnEl.style.setProperty("--yPos", y + "px");
+});
+
+
+// Animation scrollReveal apparition
+const sr = ScrollReveal();
+
+sr.reveal('.pour-vous',{
+  origin: 'top',
+  distance: '-350px',
+  duration: 1000,
+  interval: 100,
+  delay:500,
+  easing: 'ease-out',
+  viewOffset: {
+    bottom: 100
+},
+  mobile:false
 });

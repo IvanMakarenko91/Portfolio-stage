@@ -134,6 +134,22 @@ h1 {
   filter: brightness(30%);
 }
 
+#remonter {
+  height: 30px;
+  width: 30px;
+  background: rgb(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  cursor: pointer;
+  border: none;
+  z-index: 4;
+  transition: all 0.5s;
+}
 
 /* Header */
 
@@ -440,6 +456,18 @@ section {
   transition: opacity 0.25s;
 }
 
+.real-overlay a {
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  padding: 10px 20px;
+  transition: all 0.2s;
+}
+
+.real-overlay a:hover {
+  background-color: rgb(203 146 115);
+}
+
 .real-overlay > * {
   transform: translateY(100px);
   transition: transform 0.25s;
@@ -492,6 +520,13 @@ section {
   }
   .image-jointe {
     height: 250px;
+  }
+  .real-overlay {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.4);
+  }
+  .real-overlay > * {
+    transform: translateY(0px);
   }
 }
 
