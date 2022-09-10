@@ -63,6 +63,16 @@ toggle_menu.addEventListener('click', () => {
   menu.classList.toggle('responsive') ;
 })
 
+var menuSelect = document.querySelectorAll('.links');
+
+// Remove responsive menu au click
+for(i = 0; i < menuSelect.length; i++) {
+  menuSelect[i].addEventListener('click', () => {
+    toggle_menu.classList.remove('activer') ;
+    menu.classList.remove('responsive');
+  })
+}
+
 
 // Menu class active
 const li = document.querySelectorAll('.links');

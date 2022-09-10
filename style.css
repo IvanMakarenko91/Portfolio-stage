@@ -301,6 +301,9 @@ section {
     justify-content: start;
     align-items: center;
   }
+  nav li a {
+    width: 100%;
+  }
   header .menu.responsive {
     top: 50px;
     opacity: 1;
@@ -367,7 +370,7 @@ section {
 .moi {
   font-size: 1.3rem;
   text-align: center;
-  line-height: 1.8;
+  line-height: 1.5;
 }
 
 
@@ -423,9 +426,14 @@ section {
   max-width: 1400px;
 }
 
+.width-max {
+  max-width: 1400px;
+}
+
 .moi-real {
   font-size: 1.3rem;
   text-align: center;
+  line-height: 1.5;
 }
 
 .image {
@@ -504,6 +512,16 @@ section {
   color: green;
 }
 
+@media (max-width:991px) {
+  .real-overlay {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.4);
+  }
+  .real-overlay > * {
+    transform: translateY(0px);
+  }
+}
+
 @media (max-width:768px) {
   #realisation {
     padding: 70px 30px;
@@ -520,13 +538,6 @@ section {
   }
   .image-jointe {
     height: 250px;
-  }
-  .real-overlay {
-    opacity: 1;
-    background: rgba(0, 0, 0, 0.4);
-  }
-  .real-overlay > * {
-    transform: translateY(0px);
   }
 }
 
@@ -610,10 +621,11 @@ section {
 
 .cent {
   width: 100%;
+  max-height: 1200px;
 }
 
 .photo2 {
-  min-height: 50vh;
+  min-height: 200px;
   background: url('./images/competence.jpg');
   background-size: cover;
   background-position: center;
