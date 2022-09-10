@@ -75,19 +75,46 @@ aside {
   place-items: center;
 }
 
-.play {
-  display: inline-block;
-  background: purple;
-  color: #fff;
-  text-decoration: none;
-  border: none;
-  border-radius: 5px;
+.btns {
+  background-color: rgb(255, 255, 255);
   padding: 10px 20px;
-  margin-top: 15px;
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  color: black;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  transition: all 1s;
 }
 
-.play:hover {
-  opacity: 0.9;
+.btns span {
+  position: relative;
+  z-index: 1;
+}
+
+.btns::before {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  width: 0;
+  height: 0;
+  left: var(--xPos);
+  top: var(--yPos);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  transition: width 1.5s, height 1.5s;
+  opacity: 0;
+  border: 10px solid rgb(233 146 115);
+}
+
+.btns:hover::before {
+  width: 250px;
+  height: 250px;
+  opacity: 1;
+}
+
+.btns:hover {
+  background-color: rgb(203 146 115);
 }
 
 h1 {
@@ -361,6 +388,10 @@ section {
   }
   .moi {
     line-height: 1.5;
+  }
+  .presentation-image {
+    width: 200px;
+    height: 200px;
   }
 }
 

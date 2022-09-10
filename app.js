@@ -35,18 +35,18 @@ function updateNum() {
 
 
 // Boutton play
-const btn = document.querySelector(".btn");
+const btns = document.querySelector(".btns");
 const video = document.querySelector(".background-video");
 const fa = document.querySelector(".fa");
 
-btn.addEventListener("click", () => {
-  if (btn.classList.contains("pause")) {
-    btn.classList.remove("pause");
+btns.addEventListener("click", () => {
+  if (btns.classList.contains("pause")) {
+    btns.classList.remove("pause");
     video.play();
     fa.classList.add("fa-pause");
     fa.classList.remove("fa-play");
   } else {
-    btn.classList.add("pause");
+    btns.classList.add("pause");
     video.pause();
     fa.classList.remove("fa-pause");
     fa.classList.add("fa-play");
@@ -113,4 +113,22 @@ let telechargers = document.getElementById('telecharger');
 let downloads = document.getElementById('download');
 telechargers.addEventListener("click", () => {
   downloads.style.color = "#52BB32";
+});
+
+
+// Scroll animation opacité page
+const bgImageEl = document.getElementById("bg-image");
+
+window.addEventListener("scroll", () => {
+  bgImageEl.style.opacity = 1 - window.pageYOffset / window.innerHeight;
+});
+
+const btnEl = document.querySelector(".btns");
+
+btnEl.addEventListener("mouseover", (event) => {
+  const x = event.pageX - btnEl.offsetLeft;
+  const y = event.pageY - btnEl.offsetTop;
+
+  btnEl.style.setProperty("--xPos", x + "px");
+  btnEl.style.setProperty("--yPos", y + "px");
 });
