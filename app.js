@@ -1,15 +1,17 @@
 // Opacity vidéo background
 const loader = document.querySelector('.loader');
 const main = document.querySelector('main');
+const body = document.querySelector('body');
 
 function init() {
   setTimeout(() => {
     loader.style.opacity = 0;
     loader.style.display = 'none';
 
-    main.style.display = 'block';
+    // main.style.display = 'block';
+    body.style.overflowY = "visible";
     setTimeout(() => (main.style.opacity = 1), 50);
-  }, 100);
+  }, 4500);
 }
 
 init();
@@ -29,7 +31,7 @@ function updateNum() {
   barEl.style.width = idx + "%";
   idx++;
   if (idx < 101) {
-    setTimeout(updateNum, 20);
+    setTimeout(updateNum, 30);
   }
 }
 
@@ -80,9 +82,13 @@ const sec = document.querySelectorAll('section');
 
 function activeMenu() {
   let len = sec.length;
-  while(--len && window.scrollY + 150 < sec[len].offsetTop);
+  while(--len && window.scrollY + 48 < sec[len].offsetTop);
   li.forEach(ltx => ltx.classList.remove('activerr'));
   li[len].classList.add('activerr');
+  if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
+    li[4].classList.add('activerr');
+    li[3].classList.remove('activerr');
+  }
 }
 activeMenu();
 window.addEventListener('scroll', activeMenu)
@@ -169,7 +175,7 @@ sr.reveal('.pour-vous',{
   distance: '-350px',
   duration: 1000,
   interval: 100,
-  delay:500,
+  delay:200,
   easing: 'ease-out',
   viewOffset: {
     bottom: 100
