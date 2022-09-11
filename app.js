@@ -8,7 +8,7 @@ function init() {
     loader.style.opacity = 0;
     loader.style.display = 'none';
 
-    // main.style.display = 'block';
+    main.style.display = 'block';
     body.style.overflowY = "visible";
     setTimeout(() => (main.style.opacity = 1), 50);
   }, 4500);
@@ -19,8 +19,8 @@ init();
 
 // Size bar loading
 const counterEl = document.querySelector(".counter");
-
 const barEl = document.querySelector(".loading-bar-front");
+const good = document.querySelector("#good");
 
 let idx = 0;
 
@@ -32,6 +32,8 @@ function updateNum() {
   idx++;
   if (idx < 101) {
     setTimeout(updateNum, 30);
+  } else {
+    good.style.opacity = 1;
   }
 }
 
@@ -82,12 +84,28 @@ const sec = document.querySelectorAll('section');
 
 function activeMenu() {
   let len = sec.length;
+  if(window.innerHeight < 1410) {
   while(--len && window.scrollY + 48 < sec[len].offsetTop);
   li.forEach(ltx => ltx.classList.remove('activerr'));
   li[len].classList.add('activerr');
   if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
     li[4].classList.add('activerr');
     li[3].classList.remove('activerr');
+    li[2].classList.remove('activerr');
+    li[1].classList.remove('activerr');
+    li[0].classList.remove('activerr');
+  }
+  } else {
+    while(--len && window.scrollY + 480 < sec[len].offsetTop);
+  li.forEach(ltx => ltx.classList.remove('activerr'));
+  li[len].classList.add('activerr');
+  if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
+    li[4].classList.add('activerr');
+    li[3].classList.remove('activerr');
+    li[2].classList.remove('activerr');
+    li[1].classList.remove('activerr');
+    li[0].classList.remove('activerr');
+  }
   }
 }
 activeMenu();

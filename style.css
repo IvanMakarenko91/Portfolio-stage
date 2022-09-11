@@ -10,6 +10,14 @@
   padding: 0;
 }
 
+:root {
+  --loader-color: #d3a358;
+  --white: white;
+  --black: black;
+  --smoke: whitesmoke;
+  --second-page: rgb(253, 253, 253);
+}
+
 body {
   scroll-behavior: smooth;
   font-family: 'Lato', sans-serif;
@@ -28,11 +36,11 @@ h1,h2,h3,h4,h5,h6,.fond,.fond2,.titre {
   z-index: 100;
   width: 100%;
   height: 100vh;
-  background-color: whitesmoke;
+  background-color: var(--smoke);
 }
 
 #loading h1 {
-  color: #d3a358;
+  color: var(--loader-color);
 }
 
 .contenu-loading {
@@ -47,7 +55,7 @@ h1,h2,h3,h4,h5,h6,.fond,.fond2,.titre {
 .counter {
   font-size: 40px;
   font-family: 'EB Garamond', serif;
-  color: #d3a358;
+  color: var(--loader-color);
 }
 
 .loading-bar-back {
@@ -75,7 +83,7 @@ h1,h2,h3,h4,h5,h6,.fond,.fond2,.titre {
   width: 0%;
   box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
   border: none;
-  animation: move 6s linear infinite;
+  animation: move 5s linear infinite;
 }
 
 @keyframes move {
@@ -87,10 +95,18 @@ h1,h2,h3,h4,h5,h6,.fond,.fond2,.titre {
   }
 }
 
+#good {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+  color: var(--loader-color);
+  font-size: 1.8rem;
+}
+
 main {
   text-align: center;
   width: 100%;
   opacity: 0;
+  display: none;
   transition: opacity 1s ease-in;
 }
 
@@ -101,7 +117,7 @@ aside {
 }
 
 .btns {
-  background-color: rgb(255, 255, 255);
+  background-color: var(--white);
   padding: 10px 20px;
   box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.3);
   text-decoration: none;
@@ -143,7 +159,7 @@ aside {
 }
 
 h1 {
-  color: white;
+  color: var(--white);
   letter-spacing: 0.25em;
   font-weight: 300;
 }
@@ -163,7 +179,7 @@ h1 {
   height: 30px;
   width: 30px;
   background: rgb(0, 0, 0, 0.5);
-  color: white;
+  color: var(--white);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -186,7 +202,7 @@ h1 {
 
 header {
   padding: 0px;
-  background-color: white;
+  background-color: var(--white);
   position: sticky;
   width: 100%;
   z-index: 1;
@@ -203,7 +219,7 @@ header h2 {
   justify-content: space-around;
   align-items: center;
   position: relative;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.200);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 header ul {
@@ -225,7 +241,7 @@ nav li {
 
 nav li a {
   text-decoration: none;
-  color: black;
+  color: var(--black);
   font-weight: 500;
   padding: 12px 15px;
   font-size: 15px;
@@ -235,8 +251,8 @@ nav li a {
 }
 
 nav li a:hover {
-  color: white;
-  background-color: rgba(0, 0, 0, 0.800);
+  color: var(--white);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 section {
@@ -249,10 +265,10 @@ section {
 }
 
 .activerr {
-  background-color: black;
+  background-color: var(--black);
 }
 .activerr a {
-  color: white;
+  color: var(--white);
 }
 
 .toggle-menu {
@@ -271,16 +287,16 @@ section {
   content: "";
   height: 5px;
   width: 25px;
-  background-color: rgb(0, 0, 0);
+  background-color: var(--black);
   border-radius: 6px;
-  box-shadow: 0px 10px 0px rgb(0, 0, 0);
+  box-shadow: 0px 10px 0px var(--black);
   transform: translateY(-10px);
   transition: 0.5s;
 }
 
 .toggle-menu.activer::before{
   transform: translateY(0) rotate(-45deg);
-  box-shadow: 0 0px 0 rgb(0, 0, 0);
+  box-shadow: 0 0px 0 var(--black);
 }
 
 .toggle-menu::after{
@@ -288,7 +304,7 @@ section {
   content: "";
   height: 5px;
   width: 25px;
-  background-color: rgb(0, 0, 0);
+  background-color: var(--black);
   border-radius: 6px;
   transform: translateY(10px);
   transition: 0.5s;
@@ -322,7 +338,7 @@ section {
     left: 0;
     opacity: 0;
     transition: all 0.5s ease-in-out;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--white);
   }
   nav ul {
     width: 100%;
@@ -346,7 +362,7 @@ section {
 
 #presentation {
   position: relative;
-  background-color: whitesmoke;
+  background-color: var(--smoke);
   padding: 150px 50px 150px 50px;
   display: flex;
   flex-direction: column;
@@ -394,7 +410,7 @@ section {
   position: absolute;
   height: 1px;
   width: 50px;
-  background-color: black;
+  background-color: var(--black);
   bottom: -30px;
 }
 
@@ -450,7 +466,7 @@ section {
 
 #realisation {
   position: relative;
-  background-color: rgb(253, 253, 253);
+  background-color: var(--second-page);
   padding: 100px 50px 100px 50px;
   display: flex;
   flex-direction: column;
@@ -476,7 +492,7 @@ section {
 .image-jointe {
   width: 100%;
   height: 300px;
-  box-shadow: 1px 1px 5px black;
+  box-shadow: 1px 1px 5px var(--black);
 }
 
 .real-overlay {
@@ -497,8 +513,8 @@ section {
 
 .real-overlay a {
   text-decoration: none;
-  color: black;
-  background-color: white;
+  color: var(--black);
+  background-color: var(--white);
   padding: 10px 20px;
   transition: all 0.2s;
 }
@@ -532,15 +548,6 @@ section {
 
 .travaux i {
   font-size: 1.1rem;
-}
-
-.travaux button {
-  background-color: rgb(207, 198, 198);
-  color: black;
-}
-.travaux button:hover {
-  background-color: rgb(255, 255, 255);
-  color: green;
 }
 
 @media (max-width:991px) {
@@ -583,7 +590,7 @@ section {
 
 #qualite {
   position: relative;
-  background-color: whitesmoke;
+  background-color: var(--smoke);
   padding: 150px 50px 150px 50px;
   display: flex;
   flex-direction: column;
@@ -596,8 +603,8 @@ section {
 .pour-vous {
   width: 400px;
   height: 200px;
-  background-color: white;
-  color: black;
+  background-color: var(--white);
+  color: var(--black);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -613,16 +620,12 @@ section {
 
 .pour-vous p {
   text-align: center;
-  color: white;
+  color: var(--white);
 }
 
 .pour-vous:hover {
   background-color: black;
-  color: white;
-}
-
-.pour-vous:hover p {
-  color: white;
+  color: var(--white);
 }
 
 @media (max-width:768px) {
@@ -645,7 +648,7 @@ section {
 
 #competences {
   position: relative;
-  background-color: rgb(253, 253, 253);
+  background-color: var(--second-page);
   padding: 0px;
   display: flex;
 }
@@ -710,7 +713,7 @@ section {
   right: 5px;
   transform: translateY(-50%);
   font: bold 14px "Quicksand", sans-serif;
-  color: black;
+  color: var(--black);
 }
 
 .aligner-centrer {
@@ -739,7 +742,7 @@ section {
 /* Footer */
 
 #contacts {
-  background-color: whitesmoke;
+  background-color: var(--smoke);
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -768,7 +771,7 @@ section {
 
 .fa-github, .fa-linkedin {
   font-size: 3rem;
-  color: black;
+  color: var(--black);
 }
 .fa-github:hover, .fa-linkedin:hover {
   color: rgb(61, 60, 60);
@@ -777,7 +780,7 @@ section {
 .copyright {
   background-color: #44484b;
   min-height: 8vh;
-  color: white;
+  color: var(--white);
   display: flex;
   justify-content: center;
   align-items: center;
