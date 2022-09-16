@@ -11,7 +11,7 @@ function init() {
     main.style.display = 'block';
     body.style.overflowY = "visible";
     setTimeout(() => (main.style.opacity = 1), 50);
-  }, 4500);
+  }, 200);
 }
 
 init();
@@ -39,23 +39,23 @@ function updateNum() {
 
 
 // Boutton play
-const btns = document.querySelector(".btns");
-const video = document.querySelector(".background-video");
-const fa = document.querySelector(".fa");
+// const btns = document.querySelector(".btns");
+// const video = document.querySelector(".background-video");
+// const fa = document.querySelector(".fa");
 
-btns.addEventListener("click", () => {
-  if (btns.classList.contains("pause")) {
-    btns.classList.remove("pause");
-    video.play();
-    fa.classList.add("fa-pause");
-    fa.classList.remove("fa-play");
-  } else {
-    btns.classList.add("pause");
-    video.pause();
-    fa.classList.remove("fa-pause");
-    fa.classList.add("fa-play");
-  }
-});
+// btns.addEventListener("click", () => {
+//   if (btns.classList.contains("pause")) {
+//     btns.classList.remove("pause");
+//     video.play();
+//     fa.classList.add("fa-pause");
+//     fa.classList.remove("fa-play");
+//   } else {
+//     btns.classList.add("pause");
+//     video.pause();
+//     fa.classList.remove("fa-pause");
+//     fa.classList.add("fa-play");
+//   }
+// });
 
 
 // Menu boutton toggle
@@ -164,6 +164,16 @@ window.addEventListener("scroll", () => {
   }
 });
 
+// Animation boutton
+window.addEventListener("scroll", () => {
+  if(scrollY > 10) {
+    remonter.style.animation = 'none';
+  }
+  else {
+    remonter.style.animation = 'glowing 2000ms infinite';
+  }
+})
+
 remonter.addEventListener('click', () => {
   window.scrollTo({
       top: window.innerHeight,
@@ -174,15 +184,15 @@ remonter.addEventListener('click', () => {
 
 
 // Effet ripple au survol
-const btnEl = document.querySelector(".btns");
+// const btnEl = document.querySelector(".btns");
 
-btnEl.addEventListener("mouseover", (event) => {
-  const x = event.pageX - btnEl.offsetLeft;
-  const y = event.pageY - btnEl.offsetTop;
+// btnEl.addEventListener("mouseover", (event) => {
+//   const x = event.pageX - btnEl.offsetLeft;
+//   const y = event.pageY - btnEl.offsetTop;
 
-  btnEl.style.setProperty("--xPos", x + "px");
-  btnEl.style.setProperty("--yPos", y + "px");
-});
+//   btnEl.style.setProperty("--xPos", x + "px");
+//   btnEl.style.setProperty("--yPos", y + "px");
+// });
 
 
 // Animation scrollReveal apparition

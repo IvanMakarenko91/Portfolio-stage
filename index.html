@@ -32,14 +32,17 @@
 </div>
 
 <!-- Background video -->
-<main>
-  <aside>
-    <video class="background-video" id="bg-image" muted autoplay loop src="AssemblerVideos.mp4"></video>
-    <h1 class="mx-5">Ivan Makarenko</h1>
+<main id="particles-js">
+    <!-- <video class="background-video" id="bg-image" muted autoplay loop src="videoPo.mp4"></video> -->
+    <div class="img-first" id="bg-image"></div>
+    <div class="interieur">
+      <h1 class="mb-5">Ivan Makarenko</h1>
+      <p>Développeur web en formation</p>
+    </div>
+    <!-- <h1 class="mx-5">Ivan Makarenko</h1>
     <button class="btns"><span>Pause</span>
      <i class="fa fa-pause ms-2" aria-hidden="true"></i>
-    </button>
-  </aside>
+    </button> -->
 </main>
 
 
@@ -75,8 +78,9 @@
         Bien que je sois débutant, je suis quelqu'un de motivé et <strong>prêt à affronter toutes les difficultés.</strong></div>
     </div>
   </div>
-  <div class="row">
-    <div class="presentation-image"></div>
+  <div class="row justify-content-center">
+    <div class="presentation-image mb-5"></div>
+    <h2 class="initial text-center">I.M</h2>
   </div>
 </section>
 
@@ -274,5 +278,7 @@
 
   <script src="https://unpkg.com/scrollreveal"></script>
   <script src="./app.js"></script>
+  <script src="./particles.js"></script>
+  <script src="./apps.js"></script>
 </body>
 </html>
