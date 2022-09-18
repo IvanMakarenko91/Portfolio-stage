@@ -11,7 +11,7 @@ function init() {
     main.style.display = 'block';
     body.style.overflowY = "visible";
     setTimeout(() => (main.style.opacity = 1), 50);
-  }, 200);
+  }, 4500);
 }
 
 init();
