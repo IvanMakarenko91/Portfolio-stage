@@ -117,7 +117,7 @@ main {
 }
 
 .img-first {
-  background: url("./images/profil1.jpg");
+  background: url("./images/profil1-stage.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   /* background-position: center; */
@@ -416,7 +416,7 @@ section {
 }
 
 .presentation-image {
-  background-image: url("./images/profil.jpg");
+  background-image: url("./images/profilR.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   width: 300px;
@@ -633,6 +633,23 @@ section {
 }
 
 
+/* Stage */
+
+#stage {
+  position: relative;
+  background-color: var(--second-page);
+  padding: 100px 50px 100px 50px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1400px;
+}
+
+@media (max-width:768px) {
+  #stage {
+    padding: 70px 30px;
+  }
+}
+
 /* Qualité */
 
 #qualite {
@@ -707,7 +724,7 @@ section {
 
 .photo2 {
   min-height: 200px;
-  background: url('./images/competence.jpg');
+  background: url('./images/competence2.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

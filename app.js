@@ -11,7 +11,7 @@ function init() {
     main.style.display = 'block';
     body.style.overflowY = "visible";
     setTimeout(() => (main.style.opacity = 1), 50);
-  }, 4500);
+  }, 1500);
 }
 
 init();
@@ -31,31 +31,11 @@ function updateNum() {
   barEl.style.width = idx + "%";
   idx++;
   if (idx < 101) {
-    setTimeout(updateNum, 30);
+    setTimeout(updateNum, 1);
   } else {
     good.style.opacity = 1;
   }
 }
-
-
-// Boutton play
-// const btns = document.querySelector(".btns");
-// const video = document.querySelector(".background-video");
-// const fa = document.querySelector(".fa");
-
-// btns.addEventListener("click", () => {
-//   if (btns.classList.contains("pause")) {
-//     btns.classList.remove("pause");
-//     video.play();
-//     fa.classList.add("fa-pause");
-//     fa.classList.remove("fa-play");
-//   } else {
-//     btns.classList.add("pause");
-//     video.pause();
-//     fa.classList.remove("fa-pause");
-//     fa.classList.add("fa-play");
-//   }
-// });
 
 
 // Menu boutton toggle
@@ -85,11 +65,12 @@ const sec = document.querySelectorAll('section');
 function activeMenu() {
   let len = sec.length;
   if(window.innerHeight < 1410) {
-  while(--len && window.scrollY + 48 < sec[len].offsetTop);
+  while(--len && window.scrollY + 47 < sec[len].offsetTop);
   li.forEach(ltx => ltx.classList.remove('activerr'));
   li[len].classList.add('activerr');
   if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
-    li[4].classList.add('activerr');
+    li[5].classList.add('activerr');
+    li[4].classList.remove('activerr');
     li[3].classList.remove('activerr');
     li[2].classList.remove('activerr');
     li[1].classList.remove('activerr');
@@ -100,7 +81,8 @@ function activeMenu() {
   li.forEach(ltx => ltx.classList.remove('activerr'));
   li[len].classList.add('activerr');
   if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
-    li[4].classList.add('activerr');
+    li[5].classList.add('activerr');
+    li[4].classList.remove('activerr');
     li[3].classList.remove('activerr');
     li[2].classList.remove('activerr');
     li[1].classList.remove('activerr');
@@ -136,8 +118,8 @@ window.addEventListener('scroll', () => {
         updateProgressBar(myProgressBar1, 90)
         updateProgressBar(myProgressBar2, 90)
         updateProgressBar(myProgressBar3, 60)
-        updateProgressBar(myProgressBar4, 80)
-        updateProgressBar(myProgressBar5, 40)
+        updateProgressBar(myProgressBar4, 90)
+        updateProgressBar(myProgressBar5, 50)
     }
 })
 
